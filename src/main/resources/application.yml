@@ -1,0 +1,59 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/contact-management
+    username: postgres
+    password: NewPost
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+
+
+
+app:
+  jwtSecret: Buz23bPKfrsUcQ65dOfIsy9LOBhtJ7D/2BjGAx0Z9HUTref5qrkwU0B6JEghs2Ea0drYtyGWyCgpuaIDf8htDFE0WEpvfk//n8ndNIQdAie652SCm8lHqbr+yRG5ggg76Ee/LxDK0Ay7bWV9GW4XzTYiIP2AaqlUmRDc1ITNSUmQajjNPvNZ8pxkaMLXWBvmqbFYFqKPRV1lFKvpivjBVg8A95nK5WQpRqwwbbQw5Cd3VGZfEhOfG/eG6jKzh26U9OABkiidU48cDjPpXYGHJsYjQPG4ALaY/4JMNYhJoP3W9TA4JyyiXn3KuCKu25XoDYardKb09QwgYRHD0os5yYv/MDuNTF1K1EtYLwKmS62+YMUDX3EM6OTCta9M4wLwS1qMCjDAWVBjnw7muz/2HmxgINRFuHHoSnb0RpTbyFM/iAloSvGiDeoS1je9hDAsO4EbBQNV5gb9HotkKDlAEpMImDJEkgADoa8GP9/Ywpy6X1vIA1AOt4IvDAjzpPHHfsenEGoLTb0RKStmwNoLH2zqBXTFgPJ+kE1bw7Q0sItHk3LJv8S5rYHeQE3VTuNYBQwI4bQcBkDtmFdxD7tYzuKdaDJ5w/DsKm97SmwQZJKnhZlxyIXm/1FMeGcCJYvPq6XZ75hGXC0dChZ554MmFFuKBnJsBOuIVrnzXT2SdpnnVpOAmF2YMDoUzTf5fBR/
+
+  jwtExpirationMs: 86400000  # 24 hours
+  admin:
+    username: admin
+    email: admin@example.com
+    password: admin123
+    enabled: true
+
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+server:
+  port: 9091
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+        web: DEBUG
+        mvc: DEBUG
+
+session:
+  cookie:
+    name: MYSESSIONID
+    secure: true
